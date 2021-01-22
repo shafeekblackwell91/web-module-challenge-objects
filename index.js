@@ -15,9 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){ 
+  const whatsForLunch = {name, price, category};
+  return whatsForLunch;
 }
+console.log(createMenuItem('tacos', 8, 'lunch'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -49,8 +51,28 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   /*Your code here*/
-}
+  discount: function(string){
+    if (string === 'teacher' || string === 'student'){
+      return this.price - 18 * 0.25;
+      } else {
+          return this.price - 18 * 0.1;
+          }
+    }
+  }
+works now, thanks.  Actually, 18 works as well, as in
+export const burger = {
+  name: "Burger", 
+  price: 18, 
+  category: "Lunch", 
+  discount: function(string){
+    if (string === 'teacher' || string === 'student'){
+      return 18 - 18 * 0.25;
+      } else {
+          return 18 - 18 * 0.1;
+          }
+    }
 
+  }
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -121,9 +143,17 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(/array, index) {
+  let name = index[0];
+  let rating = index[1];
+  let feedback = index[2];
+  return `${array[index].name} gave the restaurant a ${rating} star review, and
+  thier feedback was: ${feedback}`;
+
   /*Your code here*/
-} 
+}
+getReviewByIndex(reviews, 0);
+
 
 
 
@@ -143,7 +173,8 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
+ function getReviewByRating(){
+  
     /* code here */
   }
 
